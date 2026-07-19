@@ -1,0 +1,106 @@
+[
+  {
+    "sport": "Cricket",
+    "fact": "The first official cricket Test match was played in 1877 between Australia and England at the Melbourne Cricket Ground (MCG). Australia won by 45 runs."
+  },
+  {
+    "sport": "Cricket",
+    "fact": "Sir Don Bradman of Australia holds the highest career Test batting average of 99.94, widely regarded as the greatest statistical achievement in any major sport."
+  },
+  {
+    "sport": "Cricket",
+    "fact": "The ICC Cricket World Cup was first held in 1975 in England. The West Indies won the inaugural tournament, defeating Australia in the final."
+  },
+  {
+    "sport": "Cricket",
+    "fact": "Sachin Tendulkar holds the record for the most runs in international cricket history with 34,357 runs across all formats, and was the first player to score a double century (200*) in ODI cricket."
+  },
+  {
+    "sport": "Cricket",
+    "fact": "The Indian Premier League (IPL) was founded in 2008 by the BCCI. It is the most-attended cricket league in the world and among the highest-paying sporting leagues globally."
+  },
+  {
+    "sport": "Football",
+    "fact": "The FIFA World Cup was first held in 1930. Uruguay hosted and won the tournament, defeating Argentina 4-2 in the final match in Montevideo."
+  },
+  {
+    "sport": "Football",
+    "fact": "Brazil holds the record for the most FIFA World Cup titles with 5 victories (1958, 1962, 1970, 1994, 2002). Pelé is the only player to have won three World Cups."
+  },
+  {
+    "sport": "Football",
+    "fact": "The UEFA Champions League, originally known as the European Cup, was first held in 1955. Real Madrid won the first five editions of the tournament consecutively from 1956 to 1960."
+  },
+  {
+    "sport": "Football",
+    "fact": "Lionel Messi has won 8 Ballon d'Or awards, the most by any player in history. He led Argentina to their third FIFA World Cup title in 2022, defeating France in the final."
+  },
+  {
+    "sport": "Football",
+    "fact": "The English Premier League was founded in 1992. Manchester United has won the most Premier League titles with 13, while Arsenal's 2003-04 'Invincibles' season remains the only unbeaten league campaign."
+  },
+  {
+    "sport": "Badminton",
+    "fact": "The Thomas Cup, established in 1948, is the premier international men's team badminton championship. India won its historic first title in 2022 by defeating Indonesia 3-0 in the final."
+  },
+  {
+    "sport": "Badminton",
+    "fact": "Badminton became an official Olympic sport in 1992 at the Barcelona Games. The shuttlecock can travel at speeds exceeding 400 km/h during a smash, making it the fastest racket sport."
+  },
+  {
+    "sport": "Badminton",
+    "fact": "Lin Dan of China is considered one of the greatest badminton players of all time, having won two consecutive Olympic gold medals in men's singles (2008 Beijing, 2012 London) and five World Championship titles."
+  },
+  {
+    "sport": "Badminton",
+    "fact": "The All England Open Badminton Championships, first held in 1899, is the oldest and one of the most prestigious badminton tournaments in the world."
+  },
+  {
+    "sport": "Tennis",
+    "fact": "The four Grand Slam tournaments are the Australian Open, French Open (Roland Garros), Wimbledon, and the US Open. Wimbledon is the oldest, founded in 1877."
+  },
+  {
+    "sport": "Tennis",
+    "fact": "Novak Djokovic holds the record for the most men's Grand Slam singles titles with 24. He also holds the record for the most weeks ranked as world No. 1 by the ATP."
+  },
+  {
+    "sport": "Tennis",
+    "fact": "Serena Williams won 23 Grand Slam singles titles during her career, the most by any player in the Open Era. She held all four Grand Slam titles simultaneously in 2002-03, known as the 'Serena Slam'."
+  },
+  {
+    "sport": "Tennis",
+    "fact": "Rafael Nadal has won the French Open a record 14 times, earning him the nickname 'The King of Clay'. He retired from professional tennis in 2024 after an illustrious career."
+  },
+  {
+    "sport": "Basketball",
+    "fact": "Basketball was invented by Dr. James Naismith in December 1891 in Springfield, Massachusetts. The first game was played with a soccer ball and two peach baskets."
+  },
+  {
+    "sport": "Basketball",
+    "fact": "Michael Jordan won 6 NBA Championships with the Chicago Bulls (1991-93, 1996-98) and was named Finals MVP all six times. He is widely considered the greatest basketball player of all time."
+  },
+  {
+    "sport": "Basketball",
+    "fact": "LeBron James became the NBA's all-time leading scorer on February 7, 2023, surpassing Kareem Abdul-Jabbar's record of 38,387 career points."
+  },
+  {
+    "sport": "Basketball",
+    "fact": "The NBA's 'Dream Team' at the 1992 Barcelona Olympics, featuring Michael Jordan, Magic Johnson, and Larry Bird, is widely regarded as the greatest sports team ever assembled."
+  },
+  {
+    "sport": "Baseball",
+    "fact": "Baseball's World Series has been played since 1903. The New York Yankees hold the record for the most World Series titles with 27 championships."
+  },
+  {
+    "sport": "Baseball",
+    "fact": "Babe Ruth, known as 'The Sultan of Swat', hit 714 career home runs and is considered one of the greatest athletes in American sports history. His record stood for 39 years until Hank Aaron surpassed it in 1974."
+  },
+  {
+    "sport": "Baseball",
+    "fact": "Jackie Robinson broke Major League Baseball's color barrier on April 15, 1947, when he debuted for the Brooklyn Dodgers. His jersey number 42 is retired across all MLB teams."
+  },
+  {
+    "sport": "Baseball",
+    "fact": "Shohei Ohtani of Japan is considered the most versatile player in modern baseball, excelling as both a pitcher and a hitter. He signed a record-breaking 10-year, $700 million contract with the Los Angeles Dodgers in 2023."
+  }
+]

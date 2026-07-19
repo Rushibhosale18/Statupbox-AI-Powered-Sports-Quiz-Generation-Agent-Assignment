@@ -1,0 +1,24 @@
+# Environment & secrets
+.env
+
+# ChromaDB persistent storage
+chroma_db/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
