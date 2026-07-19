@@ -29,10 +29,10 @@ class GeminiEmbeddingFunction(EmbeddingFunction):
             from chromadb.utils import embedding_functions
             return embedding_functions.DefaultEmbeddingFunction()(input)
             
-        client = genai.Client(api_key=api_key)
+        client = genai.Client(api_key=api_key, http_options={'api_version': 'v1'})
         # Process in chunks if necessary, but facts list is small enough
         response = client.models.embed_content(
-            model='text-embedding-004',
+            model='models/embedding-001',
             contents=input
         )
         return [e.values for e in response.embeddings]
