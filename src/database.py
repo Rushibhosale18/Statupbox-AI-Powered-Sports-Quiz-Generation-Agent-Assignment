@@ -67,8 +67,9 @@ def setup_and_populate_db(json_file_path=None):
             embedding_function=embedding_fn,
         )
     except Exception as e:
-        if "dimension" in str(e).lower():
-            print("[INFO] Dimension mismatch detected. Recreating database collection...")
+        error_str = str(e).lower()
+        if "dimension" in error_str or "embedding function already exists" in error_str or "conflict" in error_str:
+            print("[INFO] Embedding mismatch detected. Recreating database collection...")
             client.delete_collection(name="sports_history")
             collection = client.create_collection(
                 name="sports_history",
@@ -126,10 +127,14 @@ def query_historic_facts(sport, query_text, n_results=3):
     client = get_chroma_client()
     embedding_fn = _get_embedding_function()
 
-    collection = client.get_or_create_collection(
-        name="sports_history",
-        embedding_function=embedding_fn,
-    )
+    try:
+        collection = client.get_collection(
+            name="sports_history",
+            embedding_function=embedding_fn,
+        )
+    except Exception:
+        print("[WARNING] ChromaDB collection not found. Run setup_and_populate_db() first.")
+        return []
 
     if collection.count() == 0:
         print("[WARNING] ChromaDB collection is empty. Run setup_and_populate_db() first.")
