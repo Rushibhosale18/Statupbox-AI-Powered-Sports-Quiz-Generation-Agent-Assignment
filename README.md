@@ -22,7 +22,7 @@ An interactive web application that generates engaging, factually accurate sport
 
 ## 🏗️ Architecture
 
-```
+
 User (Sport + Difficulty)
        │
        ▼
@@ -39,9 +39,8 @@ User (Sport + Difficulty)
     ▼       ▼
  database.py  search.py
  (ChromaDB)   (DuckDuckGo)
-```
 
----
+
 
 ## 🚀 Quick Start
 
@@ -52,13 +51,13 @@ User (Sport + Difficulty)
 
 ### 1. Clone & Navigate
 
-```bash
+bash
 cd sports-quiz-agent
-```
+
 
 ### 2. Create Virtual Environment
 
-```bash
+bash
 # Windows
 python -m venv venv
 venv\Scripts\activate
@@ -66,38 +65,37 @@ venv\Scripts\activate
 # macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
-```
+
 
 ### 3. Install Dependencies
 
-```bash
+bash
 pip install --upgrade pip
 pip install -r requirements.txt
-```
+
 
 ### 4. Configure API Key
 
-Open the `.env` file and replace the placeholder with your real key:
+Open the .env file and replace the placeholder with your real key:
 
-```
-OPENAI_API_KEY=sk-proj-your-actual-key-here
-```
+OPENAI_API_KEY=sk-Not Provided due to security issue
 
-> ⚠️ **Never commit your API key to version control!** The `.gitignore` already excludes `.env`.
+
+> ⚠️ **Never commit your API key to version control!** The .gitignore already excludes .env.
 
 ### 5. Run the App
 
-```bash
+bash
 streamlit run app.py
-```
 
-The app will open in your browser at `http://localhost:8501`.
+
+The app will open in your browser at https://statupbox-ai-powered-sports-quiz.onrender.com/.
 
 ---
 
 ## 📁 Project Structure
 
-```
+
 sports-quiz-agent/
 │
 ├── .env                   # API key (never commit this!)
@@ -118,7 +116,7 @@ sports-quiz-agent/
 │   └── generator.py       # RAG orchestration & quiz parsing
 │
 └── app.py                 # Streamlit dashboard entry point
-```
+
 
 ---
 
@@ -126,8 +124,8 @@ sports-quiz-agent/
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `OPENAI_API_KEY` | *(required)* | Your OpenAI API key |
-| `MODEL_NAME` | `gpt-3.5-turbo` | LLM model (set in `.env` to override, e.g. `gpt-4o`) |
+| OPENAI_API_KEY | *(required)* | Your OpenAI API key |
+| MODEL_NAME | gpt-3.5-turbo | LLM model (set in .env to override, e.g. gpt-4o) |
 
 ---
 
@@ -137,28 +135,28 @@ sports-quiz-agent/
 
 If you see a SQLite version error, install the binary package:
 
-```bash
+bash
 pip install pysqlite3-binary
-```
 
-Then add these lines at the **very top** of `src/database.py`:
 
-```python
+Then add these lines at the **very top** of src/database.py:
+
+python
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-```
+
 
 ### API Key Issues
 
-- Ensure `.env` contains `OPENAI_API_KEY=sk-proj-...` (no quotes needed)
+- Ensure .env contains OPENAI_API_KEY=Not Provided due to security issue
 - Check that the key is valid and has credits at [platform.openai.com](https://platform.openai.com)
 
 ### Quiz Parsing Problems
 
 If the quiz output looks garbled, try:
 1. Regenerating (the LLM output varies each time)
-2. Switching to `gpt-4o` in `.env` for more consistent formatting
+2. Switching to gpt-4o` in .env for more consistent formatting
 
 ---
 
