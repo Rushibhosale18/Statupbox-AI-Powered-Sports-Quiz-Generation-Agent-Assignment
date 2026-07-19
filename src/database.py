@@ -32,7 +32,7 @@ class GeminiEmbeddingFunction(EmbeddingFunction):
         client = genai.Client(api_key=api_key, http_options={'api_version': 'v1'})
         # Process in chunks if necessary, but facts list is small enough
         response = client.models.embed_content(
-            model='models/embedding-001',
+            model='text-embedding-004',
             contents=input
         )
         return [e.values for e in response.embeddings]
