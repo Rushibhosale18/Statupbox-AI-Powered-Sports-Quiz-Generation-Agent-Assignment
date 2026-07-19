@@ -17,9 +17,29 @@ def get_chroma_client():
     return chromadb.PersistentClient(path=CHROMA_DB_PATH)
 
 
+import shutil
+from chromadb import Documents, EmbeddingFunction, Embeddings
+from google import genai
+
+class GeminiEmbeddingFunction(EmbeddingFunction):
+    def __call__(self, input: Documents) -> Embeddings:
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            print("[WARNING] GEMINI_API_KEY not found. Using default ONNX embeddings.")
+            from chromadb.utils import embedding_functions
+            return embedding_functions.DefaultEmbeddingFunction()(input)
+            
+        client = genai.Client(api_key=api_key)
+        # Process in chunks if necessary, but facts list is small enough
+        response = client.models.embed_content(
+            model='text-embedding-004',
+            contents=input
+        )
+        return [e.values for e in response.embeddings]
+
 def _get_embedding_function():
-    """Returns the default sentence-transformer embedding function."""
-    return embedding_functions.DefaultEmbeddingFunction()
+    """Returns the Gemini embedding function to save RAM."""
+    return GeminiEmbeddingFunction()
 
 
 def setup_and_populate_db(json_file_path=None):
@@ -41,10 +61,21 @@ def setup_and_populate_db(json_file_path=None):
     embedding_fn = _get_embedding_function()
 
     # Get or create the collection
-    collection = client.get_or_create_collection(
-        name="sports_history",
-        embedding_function=embedding_fn,
-    )
+    try:
+        collection = client.get_or_create_collection(
+            name="sports_history",
+            embedding_function=embedding_fn,
+        )
+    except Exception as e:
+        if "dimension" in str(e).lower():
+            print("[INFO] Dimension mismatch detected. Recreating database collection...")
+            client.delete_collection(name="sports_history")
+            collection = client.create_collection(
+                name="sports_history",
+                embedding_function=embedding_fn,
+            )
+        else:
+            raise e
 
     # Skip if already populated
     if collection.count() > 0:
