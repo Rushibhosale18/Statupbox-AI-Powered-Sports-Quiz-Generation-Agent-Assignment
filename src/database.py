@@ -30,19 +30,23 @@ class GeminiEmbeddingFunction(EmbeddingFunction):
             return embedding_functions.DefaultEmbeddingFunction()(input)
             
         client = genai.Client(api_key=api_key, http_options={'api_version': 'v1'})
-        # Try modern Gemini models in fallback order
-        try:
-            response = client.models.embed_content(
-                model='gemini-embedding-2',
-                contents=input
-            )
-        except Exception:
-            # Fallback for some keys/regions
-            response = client.models.embed_content(
-                model='gemini-embedding-001',
-                contents=input
-            )
-        return [e.values for e in response.embeddings]
+        # Process embeddings individually since the google-genai SDK merges list[str] into 1 document
+        vectors = []
+        for text in input:
+            try:
+                res = client.models.embed_content(
+                    model='gemini-embedding-2',
+                    contents=text
+                )
+            except Exception:
+                # Fallback for some keys/regions
+                res = client.models.embed_content(
+                    model='gemini-embedding-001',
+                    contents=text
+                )
+            vectors.append(res.embeddings[0].values)
+            
+        return vectors
 
 def _get_embedding_function():
     """Returns the Gemini embedding function to save RAM."""
